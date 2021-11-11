@@ -12,14 +12,18 @@
     <div id="container">
 
         <div id="items">
+            <div class="items_active">
 
-            <img src="img\02.jpg" alt="Jumbo">
-            <div class="text">
-                <h3>Svizzera</h3>
-                <p>Lorem ipsum dolor sit amet adipisicing elit.</p>
+                <img 
+                :src="photos[activeSlide].image" 
+                :alt="photos[activeSlide].tile"
+                />
+                <div class="text">
+                    <h3>{{photos[activeSlide].tile}}</h3>
+                    <p>{{photos[activeSlide].text}}</p>
+                </div>
             </div>
         </div>
-
         <div id="thumbs">
 
             <div v-for="slide, i in photos" class="thumb" :class="i === activeSlide ? 'active' : '' " :key="i">
@@ -33,7 +37,7 @@
             <div id="prev">
                 <i class="fas fa-arrow-circle-up"></i>
             </div>
-            <div id="next">
+            <div id="next" @click="nextSlide">
                 <i class="fas fa-arrow-circle-down"></i>
             </div>
 

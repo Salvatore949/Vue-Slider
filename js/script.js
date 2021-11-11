@@ -33,5 +33,15 @@ var carousel = new Vue({
                 text:'Lorem ipsum dolor sit amet',
             }
         ],
+    },  
+        
+    methods: {
+        nextSlide: function(){
+            if(this.activeSlide === this.photos.length - 1){
+                this.activeSlide = 0;
+            } else {
+                this.activeSlide ++;
+            }
+        }
     }
 });
