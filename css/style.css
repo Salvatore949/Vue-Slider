@@ -45,7 +45,7 @@
     border: 3px solid rgb(204, 204, 204);
 }
 
-#prev{
+#prevSlide{
       display: flex;
       justify-content: center;
       margin-bottom: 20px;

@@ -1,3 +1,4 @@
+//Creo un array di oggetti che stampo nell'HTML
 var carousel = new Vue({
     el:"#container",
     data:{
@@ -34,13 +35,22 @@ var carousel = new Vue({
             }
         ],
     },  
-        
+    //Funzione che attiva il pulsante che scorre verso il basso
     methods: {
         nextSlide: function(){
             if(this.activeSlide === this.photos.length - 1){
                 this.activeSlide = 0;
             } else {
                 this.activeSlide ++;
+            }
+        },
+    //Funzione che attiva il pulsante che scorre verso l'alto
+
+        prevSlide: function(){
+            if(this.activeSlide === 0){
+                this.activeSlide = this.photos.length - 1;
+            } else {
+                this.activeSlide --;
             }
         }
     }
